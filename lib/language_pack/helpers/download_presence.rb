@@ -8,7 +8,7 @@
 #
 #    download = LanguagePack::Helpers::DownloadPresence.new(
 #      'ruby-1.9.3.tgz',
-#      stacks: ['heroku-18', 'heroku-20']
+#      stacks: ['heroku-20', 'heroku-22']
 #    )
 #
 #    download.call
