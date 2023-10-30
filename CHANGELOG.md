@@ -2,6 +2,31 @@
 
 ## Main (unreleased)
 
+## v260 (2023/10/23)
+
+- JRuby 9.4.4.0 is now available
+
+## v259 (2023/10/02)
+
+- Ruby 3.3.0-preview2 is now available
+
+## v258 (2023/09/26)
+
+- No changes
+
+## v257 (2023/09/20)
+
+- JRuby 9.3.11.0 is now available
+
+## v256 (2023/08/04)
+
+- Fix Ruby 2.5.7 download on Heroku-20
+
+## v255 (2023/07/24)
+
+- JRuby 9.4.3.0 is now available
+- JRuby 9.4.2.0 is now available
+
 ## v254 (2023/05/12)
 
 - Default Ruby version is now 3.1.4
