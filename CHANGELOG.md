@@ -2,6 +2,17 @@
 
 ## Main (unreleased)
 
+## v262 (2023/11/08)
+
+- Warn when relying on default Node.js or Yarn versions (https://github.com/heroku/heroku-buildpack-ruby/pull/1401)
+- Warn when default Node.js or Yarn versions change (https://github.com/heroku/heroku-buildpack-ruby/pull/1401)
+
+## v261 (2023/11/02)
+
+- JRuby 9.4.5.0 is now available
+- JRuby 9.3.13.0 is now available
+- Default Node.js version now 20.9.0
+
 ## v260 (2023/10/23)
 
 - JRuby 9.4.4.0 is now available
