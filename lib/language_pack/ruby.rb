@@ -1019,6 +1019,29 @@ params = CGI.parse(uri.query || "")
     if Pathname(build_path).join("package.json").exist? ||
          bundler.has_gem?('execjs') ||
          bundler.has_gem?('webpacker')
+
+      version = @node_installer.version
+      old_version = @metadata.fetch("default_node_version") { version }
+
+      if version != version
+        warn(<<~WARNING, inline: true)
+          Default version of Node.js changed (#{old_version} to #{version})
+        WARNING
+      end
+
+      warn(<<~WARNING, inline: true)
+        Installing a default version (#{version}) of Node.js.
+        This version is not pinned and can change over time, causing unexpected failures.
+
+        Scalingo recommends leveraging the multi-buildpack with
+        `https://github.com/Scalingo/nodejs-buildpack.git` and
+        `https://github.com/Scalingo/ruby-buildpack.git`
+        as it offers more comprehensive Node.js support, including the ability
+        to customise the Node.js version.
+
+        See https://doc.scalingo.com/platform/deployment/buildpacks/multi for further details.
+      WARNING
+
       [@node_installer.binary_path]
     else
       []
@@ -1029,6 +1052,29 @@ params = CGI.parse(uri.query || "")
     return [] if yarn_preinstalled?
 
     if Pathname(build_path).join("yarn.lock").exist? || bundler.has_gem?('webpacker')
+
+      version = @yarn_installer.version
+      old_version = @metadata.fetch("default_yarn_version") { version }
+
+      if version != version
+        warn(<<~WARNING, inline: true)
+          Default version of Yarn changed (#{old_version} to #{version})
+        WARNING
+      end
+
+      warn(<<~WARNING, inline: true)
+        Installing a default version (#{version}) of Yarn
+        This version is not pinned and can change over time, causing unexpected failures.
+
+        Scalingo recommends leveraging the multi-buildpack with
+        `https://github.com/Scalingo/nodejs-buildpack.git` and
+        `https://github.com/Scalingo/ruby-buildpack.git`
+        as it offers more comprehensive Node.js support, including the ability
+        to customise the Node.js version.
+
+        See https://doc.scalingo.com/platform/deployment/buildpacks/multi for further details.
+      WARNING
+
       [@yarn_installer.name]
     else
       []
