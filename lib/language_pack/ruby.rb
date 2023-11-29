@@ -1033,10 +1033,13 @@ params = CGI.parse(uri.query || "")
         Installing a default version (#{version}) of Node.js.
         This version is not pinned and can change over time, causing unexpected failures.
 
-        Heroku recommends placing the `heroku/nodejs` buildpack in front of
-        `heroku/ruby` to install a specific version of node:
+        Scalingo recommends leveraging the multi-buildpack with
+        `https://github.com/Scalingo/nodejs-buildpack.git` and
+        `https://github.com/Scalingo/ruby-buildpack.git`
+        as it offers more comprehensive Node.js support, including the ability
+        to customise the Node.js version.
 
-        https://devcenter.heroku.com/articles/ruby-support#node-js-support
+        See https://doc.scalingo.com/platform/deployment/buildpacks/multi for further details.
       WARNING
 
       [@node_installer.binary_path]
@@ -1063,11 +1066,13 @@ params = CGI.parse(uri.query || "")
         Installing a default version (#{version}) of Yarn
         This version is not pinned and can change over time, causing unexpected failures.
 
-        Heroku recommends placing the `heroku/nodejs` buildpack in front of the `heroku/ruby`
-        buildpack as it offers more comprehensive Node.js support, including the ability to
-        customise the Node.js version:
+        Scalingo recommends leveraging the multi-buildpack with
+        `https://github.com/Scalingo/nodejs-buildpack.git` and
+        `https://github.com/Scalingo/ruby-buildpack.git`
+        as it offers more comprehensive Node.js support, including the ability
+        to customise the Node.js version.
 
-        https://devcenter.heroku.com/articles/ruby-support#node-js-support
+        See https://doc.scalingo.com/platform/deployment/buildpacks/multi for further details.
       WARNING
 
       [@yarn_installer.name]
