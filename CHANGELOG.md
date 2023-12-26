@@ -2,6 +2,15 @@
 
 ## Main (unreleased)
 
+## v264 (2023/12/25)
+
+- Ruby 3.3.0 is now available
+
+## v263 (2023/12/11)
+
+- Ruby 3.3.0-rc1 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1411)
+- Fix BUILDPACK_VENDOR_URL support (https://github.com/heroku/heroku-buildpack-ruby/pull/1406)
+
 ## v262 (2023/11/08)
 
 - Warn when relying on default Node.js or Yarn versions (https://github.com/heroku/heroku-buildpack-ruby/pull/1401)
