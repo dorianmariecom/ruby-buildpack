@@ -253,6 +253,16 @@ WARNING
   end
 
   def set_default_web_concurrency
+    warn(<<~WARNING)
+      Your application is using an undocumented feature SENSIBLE_DEFAULTS
+
+      This feature is not supported and may be removed at any time. Please remove the SENSIBLE_DEFAULTS environment variable from your app.
+
+      $ scalingo --app my-app env-unset SENSIBLE_DEFAULTS
+
+      To configure your application's web concurrency, use the WEB_CONCURRENCY environment variable.
+    WARNING
+
     <<-EOF
 case $(ulimit -u) in
 256)
