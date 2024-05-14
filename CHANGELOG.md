@@ -3,6 +3,15 @@
 ## [Unreleased]
 
 
+## [v270] - 2024-04-23
+
+- Ruby versions 3.0.7, 3.1.5, 3.2.4, and 3.3.1 are now available on Heroku (https://github.com/heroku/heroku-buildpack-ruby/pull/1449)
+
+## [v269] - 2024-04-23
+
+- Fix Heroku-24 Ruby buildpack bootstrapping logic (https://github.com/heroku/heroku-buildpack-ruby/pull/1446)
+- Deprecate CNB support in this buildpack; CNB support for Ruby is provided by [heroku/buildpacks-ruby](https://github.com/heroku/buildpacks-ruby) instead (https://github.com/heroku/heroku-buildpack-ruby/pull/1445)
+
 ## [v268] - 2024-04-17
 
 - Heroku-24 stack initial support. Includes multi-architecture (arm64/amd64) logic that has not been tested on the platform (https://github.com/heroku/heroku-buildpack-ruby/pull/1439)
@@ -1515,7 +1524,9 @@ Bugfixes:
 * Change gem detection to use lockfile parser
 * use `$RACK_ENV` when thin is detected for rack apps
 
-[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v268...main
+[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v270...main
+[v270]: https://github.com/heroku/heroku-buildpack-ruby/compare/v269...v270
+[v269]: https://github.com/heroku/heroku-buildpack-ruby/compare/v268...v269
 [v268]: https://github.com/heroku/heroku-buildpack-ruby/compare/v267...v268
 [v267]: https://github.com/heroku/heroku-buildpack-ruby/compare/v266...v267
 [v266]: https://github.com/heroku/heroku-buildpack-ruby/compare/v265...v266
