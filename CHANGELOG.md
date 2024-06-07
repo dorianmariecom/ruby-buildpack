@@ -3,6 +3,17 @@
 ## [Unreleased]
 
 
+## [v271] - 2024-06-03
+
+- Ruby 3.4.0-preview1 is now available
+- Ruby 3.1.6 and 3.3.2 are now available
+- JRuby 9.4.7.0, 9.4.6.0, and 9.3.14.0 are now available
+
+## [v271] - 2024-05-24
+
+- Fix issue with sprockets reference being nil when
+  propshaft gem is used instead (https://github.com/heroku/heroku-buildpack-ruby/pull/1452)
+
 ## [v270] - 2024-04-23
 
 - Ruby versions 3.0.7, 3.1.5, 3.2.4, and 3.3.1 are now available on Heroku (https://github.com/heroku/heroku-buildpack-ruby/pull/1449)
@@ -1524,7 +1535,9 @@ Bugfixes:
 * Change gem detection to use lockfile parser
 * use `$RACK_ENV` when thin is detected for rack apps
 
-[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v270...main
+[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v271...main
+[v271]: https://github.com/heroku/heroku-buildpack-ruby/compare/v270...v271
+[v271]: https://github.com/heroku/heroku-buildpack-ruby/compare/v270...v271
 [v270]: https://github.com/heroku/heroku-buildpack-ruby/compare/v269...v270
 [v269]: https://github.com/heroku/heroku-buildpack-ruby/compare/v268...v269
 [v268]: https://github.com/heroku/heroku-buildpack-ruby/compare/v267...v268
