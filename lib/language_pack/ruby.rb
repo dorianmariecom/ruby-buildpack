@@ -189,7 +189,7 @@ WARNING
     return @ruby_version
   end
 
-  def set_default_web_concurrency
+  def warn_sensible_defaults
     warn(<<~WARNING)
       Your application is using an undocumented feature SENSIBLE_DEFAULTS
 
@@ -199,24 +199,33 @@ WARNING
 
       To configure your application's web concurrency, use the WEB_CONCURRENCY environment variable.
     WARNING
+  end
+
+  def set_default_web_concurrency
+    # Unlike Heroku, we can't rely on `ulimit -u` to set WEB_CONCURRENCY sane
+    # defaults. Instead we rely on CONTAINER_MEMORY.
 
     <<-EOF
-case $(ulimit -u) in
+memory_mb=$(( ${CONTAINER_MEMORY} / 1024 / 1024 ))
+
+case ${memory_mb} in
 256)
-  export HEROKU_RAM_LIMIT_MB=${HEROKU_RAM_LIMIT_MB:-512}
-  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-2}
+  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-1}
   ;;
 512)
-  export HEROKU_RAM_LIMIT_MB=${HEROKU_RAM_LIMIT_MB:-1024}
+  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-1}
+  ;;
+1024)
+  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-2}
+  ;;
+2048)
+  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-2}
+  ;;
+4096)
   export WEB_CONCURRENCY=${WEB_CONCURRENCY:-4}
   ;;
-16384)
-  export HEROKU_RAM_LIMIT_MB=${HEROKU_RAM_LIMIT_MB:-2560}
-  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-8}
-  ;;
-32768)
-  export HEROKU_RAM_LIMIT_MB=${HEROKU_RAM_LIMIT_MB:-6144}
-  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-16}
+8192)
+  export WEB_CONCURRENCY=${WEB_CONCURRENCY:-4}
   ;;
 *)
   ;;
@@ -334,7 +343,11 @@ EOF
 
     set_env_default "MALLOC_ARENA_MAX", "2"     if default_malloc_arena_max?
 
-    web_concurrency = env("SENSIBLE_DEFAULTS") ? set_default_web_concurrency : ""
+    if ENV.has_key?("SENSIBLE_DEFAULTS")
+      warn_sensible_defaults
+    end
+
+    web_concurrency = set_default_web_concurrency
     add_to_profiled(web_concurrency, filename: "WEB_CONCURRENCY.sh", mode: "w") # always write that file, even if its empty (meaning no defaults apply), for interop with other buildpacks - and we overwrite the file rather than appending (which is the default)
 
     # TODO handle JRUBY
