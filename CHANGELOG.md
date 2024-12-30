@@ -3,6 +3,33 @@
 ## [Unreleased]
 
 
+## [v287] - 2024-12-25
+
+- Ruby 3.4.0 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1531)
+- Ruby 3.4.1 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1531)
+
+## [v286] - 2024-12-13
+
+- Ruby 3.4.0-rc1 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1528)
+
+## [v285] - 2024-11-21
+
+- Default `UV_USE_IO_URING=0` due to build timeouts [context](https://github.com/heroku/heroku-buildpack-nodejs/pull/1347) (https://github.com/heroku/heroku-buildpack-ruby/pull/1523)
+
+## [v284] - 2024-11-15
+
+- Default Node.js version now 22.11.0 (https://github.com/heroku/heroku-buildpack-ruby/pull/1503)
+- Default Yarn version now 1.22.22 (https://github.com/heroku/heroku-buildpack-ruby/pull/1503)
+
+## [v283] - 2024-11-14
+
+- No customer facing changes
+
+## [v282] - 2024-11-08
+
+- [Rolled back] Default Node.js version now 22.11.0 (https://github.com/heroku/heroku-buildpack-ruby/pull/1503)
+- [Rolled back] Default Yarn version now 1.22.22 (https://github.com/heroku/heroku-buildpack-ruby/pull/1503)
+
 ## [v281] - 2024-11-07
 
 - Ruby 3.3.6 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1511)
@@ -1584,7 +1611,13 @@ Bugfixes:
 * Change gem detection to use lockfile parser
 * use `$RACK_ENV` when thin is detected for rack apps
 
-[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v281...main
+[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v287...main
+[v287]: https://github.com/heroku/heroku-buildpack-ruby/compare/v286...v287
+[v286]: https://github.com/heroku/heroku-buildpack-ruby/compare/v285...v286
+[v285]: https://github.com/heroku/heroku-buildpack-ruby/compare/v284...v285
+[v284]: https://github.com/heroku/heroku-buildpack-ruby/compare/v283...v284
+[v283]: https://github.com/heroku/heroku-buildpack-ruby/compare/v282...v283
+[v282]: https://github.com/heroku/heroku-buildpack-ruby/compare/v281...v282
 [v281]: https://github.com/heroku/heroku-buildpack-ruby/compare/v280...v281
 [v280]: https://github.com/heroku/heroku-buildpack-ruby/compare/v279...v280
 [v279]: https://github.com/heroku/heroku-buildpack-ruby/compare/v278...v279
