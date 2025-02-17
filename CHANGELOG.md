@@ -3,6 +3,23 @@
 ## [Unreleased]
 
 
+## [v293] - 2025-02-15
+
+- Ruby 3.4.2 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1548)
+
+## [v292] - 2025-02-10
+
+- Ruby 3.2.7 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1545)
+
+
+## [v291] - 2025-01-30
+
+- JRuby 9.4.11.0 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1542)
+
+## [v290] - 2025-01-23
+
+- JRuby 9.4.10.0 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1540)
+
 ## [v289] - 2025-01-17
 
 - Ruby 3.3.7 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1538)
@@ -1620,7 +1637,11 @@ Bugfixes:
 * Change gem detection to use lockfile parser
 * use `$RACK_ENV` when thin is detected for rack apps
 
-[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v289...main
+[unreleased]: https://github.com/heroku/heroku-buildpack-ruby/compare/v293...main
+[v293]: https://github.com/heroku/heroku-buildpack-ruby/compare/v292...v293
+[v292]: https://github.com/heroku/heroku-buildpack-ruby/compare/v291...v292
+[v291]: https://github.com/heroku/heroku-buildpack-ruby/compare/v290...v291
+[v290]: https://github.com/heroku/heroku-buildpack-ruby/compare/v289...v290
 [v289]: https://github.com/heroku/heroku-buildpack-ruby/compare/v288...v289
 [v288]: https://github.com/heroku/heroku-buildpack-ruby/compare/v287...v288
 [v287]: https://github.com/heroku/heroku-buildpack-ruby/compare/v286...v287
