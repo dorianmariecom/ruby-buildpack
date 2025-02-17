@@ -11,7 +11,6 @@
 
 - Ruby 3.2.7 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1545)
 
-
 ## [v291] - 2025-01-30
 
 - JRuby 9.4.11.0 is now available (https://github.com/heroku/heroku-buildpack-ruby/pull/1542)
