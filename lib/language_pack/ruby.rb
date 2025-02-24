@@ -1122,7 +1122,7 @@ params = CGI.parse(uri.query || "")
       msg << "https://github.com/rails/sprockets/pull/547\n"
     end
 
-    error msg
+    error "#{msg}\n\n#{output}"
   end
 
   def bundler_cache
